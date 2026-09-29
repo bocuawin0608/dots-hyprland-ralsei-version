@@ -379,7 +379,7 @@ class LyricDaemon:
                 print(f"[lyric-daemon] Parse error: {exc}", file=sys.stderr)
                 self.lyrics = [(0, "Lyric parse error")]
         else:
-            self.lyrics = [(0, "No synced lyrics available")]
+            self.lyrics = []
 
         self.next_index = 0
         await self._sync_position()
@@ -446,9 +446,6 @@ class LyricDaemon:
 
         intensity = "high" if "!" in text else "medium"
 
-        # If it's a fallback message, let's keep it visible longer so the user can read it
-        if text == "No synced lyrics available":
-            duration = 5000
 
         payload = {"text": text, "duration_ms": duration, "intensity": intensity}
         await self._send_payload(payload)

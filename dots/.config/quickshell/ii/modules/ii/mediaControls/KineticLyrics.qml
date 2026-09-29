@@ -43,18 +43,13 @@ PanelWindow {
         onPressed: root.isOpen = !root.isOpen
     }
 
-    // VISUAL FAILSAFE (Crucial)
-    Text {
-        text: "GHOST OVERLAY ACTIVE"
-        color: "red"
-        font.pixelSize: 20
-        z: 9999
-        visible: root.isOpen
-        anchors {
-            top: parent.top
-            left: parent.left
-            margins: 20
-        }
+    // Trigger an animated notification when toggled
+    onIsOpenChanged: {
+        spawnLyric({
+            text: isOpen ? "LYRICS ON" : "LYRICS OFF",
+            duration_ms: 1500,
+            intensity: "high"
+        })
     }
 
     // Container for spawned lyrics that obeys isOpen toggle
