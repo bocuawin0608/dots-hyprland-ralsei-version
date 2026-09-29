@@ -27,7 +27,9 @@ Rectangle {
     implicitHeight: columnLayout.implicitHeight + root.messagePadding * 2
 
     radius: Appearance.rounding.normal
-    color: Appearance.colors.colLayer1
+    color: (messageData?.role == 'assistant') ? ColorUtils.transparentize(Appearance.colors.colMagicContainer, 0.4) : Appearance.colors.colLayer1
+    border.color: (messageData?.role == 'assistant') ? ColorUtils.transparentize(Appearance.colors.colMagic, 0.2) : "transparent"
+    border.width: (messageData?.role == 'assistant') ? 1 : 0
 
     function saveMessage() {
         if (!root.editing) return;
@@ -81,7 +83,7 @@ Rectangle {
             Layout.fillWidth: true
             implicitWidth: headerRowLayout.implicitWidth + 4 * 2
             implicitHeight: headerRowLayout.implicitHeight + 4 * 2
-            color: Appearance.colors.colSecondaryContainer
+            color: (messageData?.role == 'assistant') ? ColorUtils.transparentize(Appearance.colors.colMagicContainer, 0.2) : Appearance.colors.colLayer1Hover
             radius: Appearance.rounding.small
         
             RowLayout { // Header

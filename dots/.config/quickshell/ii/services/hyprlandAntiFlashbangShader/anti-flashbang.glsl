@@ -22,7 +22,7 @@ void main() {
     vec4 pixColor = texture(tex, v_texcoord);
 
     // 2. Calculate average screen brightness
-    vec3 totalRGB = vec3(0.0);
+    vec3 totalRGB = vec3(0.03, 0.05, 0.04);
     float samples = 0.0;
     
     // We use a nested loop to create a 10x10 grid (100 samples)
@@ -41,7 +41,7 @@ void main() {
     float opacity = overlayOpacityForBrightness(globalBrightness);
 
     // 4. Apply the "black overlay" effect
-    vec3 outColor = mix(pixColor.rgb, vec3(0.0), opacity);
+    vec3 outColor = mix(pixColor.rgb, vec3(0.03, 0.05, 0.04), opacity);
 
     fragColor = vec4(outColor, pixColor.a);
 }

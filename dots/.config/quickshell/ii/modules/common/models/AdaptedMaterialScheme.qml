@@ -23,5 +23,6 @@ QtObject {
     property color colSecondaryContainerHover: ColorUtils.mix(Appearance.colors.colSecondaryContainerHover, root.color, 0.3)
     property color colSecondaryContainerActive: ColorUtils.mix(Appearance.colors.colSecondaryContainerActive, root.color, 0.5)
     property color colOnPrimary: ColorUtils.mix(ColorUtils.adaptToAccent(Appearance.m3colors.m3onPrimary, root.color), root.color, 0.5)
+    property color colMagic: ColorUtils.mix(root.colPrimary, "#5fe28d", 0.4)
     property color colOnSecondaryContainer: ColorUtils.mix(Appearance.m3colors.m3onSecondaryContainer, root.color, 0.5)
 }

@@ -178,7 +178,7 @@ ButtonMouseArea {
                 hover: root.containsMouse
                 press: root.containsPress
                 drag: true // There are too many layers so we need to force this to be a lil more opaque
-                contentColor: Appearance.colors.colPrimary
+                contentColor: Appearance.colors.colMagic
             }
         }
 
@@ -196,7 +196,7 @@ ButtonMouseArea {
         Colorizer {
             z: 5
             anchors.fill: numbersGrid
-            colorizationColor: Appearance.colors.colOnPrimary
+            colorizationColor: Appearance.colors.colOnMagic
             sourceColor: Appearance.colors.colOnSecondaryContainer
 
             source: activeIndicator
@@ -256,7 +256,7 @@ ButtonMouseArea {
                         sourceComponent: Colorizer {
                             implicitWidth: appIcon.implicitWidth
                             implicitHeight: appIcon.implicitHeight
-                            colorizationColor: Appearance.m3colors.darkmode ? Appearance.colors.colOnSecondaryContainer : Appearance.colors.colOnPrimary
+                            colorizationColor: Appearance.m3colors.darkmode ? Appearance.colors.colOnSecondaryContainer : Appearance.colors.colOnMagic
                             colorization: Config.options.bar.workspaces.monochromeIcons ? 0.8 : 0.5
                             brightness: 0
                             source: appIcon
@@ -300,7 +300,7 @@ ButtonMouseArea {
                     return base;
                 return specialWsText.implicitWidth + undirectionalWidth;
             }
-            color: Appearance.colors.colPrimary
+            color: Appearance.colors.colMagic
 
             implicitWidth: root.vertical ? undirectionalWidth : undirectionalLength
             implicitHeight: root.vertical ? undirectionalLength : undirectionalWidth
@@ -309,7 +309,7 @@ ButtonMouseArea {
                 id: specialWsText
                 anchors.centerIn: parent
                 text: (!root.vertical ? wsModel.specialWorkspaceName : "S")
-                color: Appearance.colors.colOnPrimary
+                color: Appearance.colors.colOnMagic
                 font.pixelSize: root.specialTextSize
             }
 
@@ -430,7 +430,7 @@ ButtonMouseArea {
 
             contentLayer: StyledRectangle.ContentLayer.Group
             radius: indicatorThickness / 2
-            color: Appearance.colors.colPrimary
+            color: Appearance.colors.colMagic
 
             x: root.vertical ? null : indicatorPosition
             y: root.vertical ? indicatorPosition : null

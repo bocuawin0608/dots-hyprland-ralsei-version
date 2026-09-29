@@ -44,7 +44,7 @@ Item { // Bar content region
         color: Config.options.bar.showBackground ? Appearance.colors.colLayer0 : "transparent"
         radius: Config.options.bar.cornerStyle === 1 ? Appearance.rounding.windowRounding : 0
         border.width: Config.options.bar.cornerStyle === 1 ? 1 : 0
-        border.color: Appearance.colors.colLayer0Border
+        border.color: Appearance.colors.colMagicContainer
     }
 
     FocusedScrollMouseArea { // Left side | scroll to change brightness

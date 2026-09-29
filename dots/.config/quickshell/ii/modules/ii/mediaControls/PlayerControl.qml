@@ -141,7 +141,7 @@ Item { // Player instance
             points: root.visualizerPoints
             maxVisualizerValue: root.maxVisualizerValue
             smoothing: root.visualizerSmoothing
-            color: blendedColors.colPrimary
+            color: blendedColors.colMagic
         }
 
         RowLayout {

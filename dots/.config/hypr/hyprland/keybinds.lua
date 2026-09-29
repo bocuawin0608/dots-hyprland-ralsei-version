@@ -357,3 +357,4 @@ hl.bind("CTRL + SHIFT + Escape", hl.dsp.exec_cmd(taskManager), { description = "
 --# Cursed stuff
 --## Make window not amogus large
 hl.bind("CTRL + SUPER + Backslash", hl.dsp.window.resize({ x = 640, y = 480, "exact" }))
+\nhl.bind("CTRL + SHIFT + Y", hl.dsp.exec_cmd("quickshell -c 'qs.services.Ipc.send(\"subtitle\", \"toggle\")'"), { description = "Toggle Ralsei Subtitle Mode" })
