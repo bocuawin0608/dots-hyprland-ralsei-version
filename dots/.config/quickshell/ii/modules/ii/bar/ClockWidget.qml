@@ -18,21 +18,21 @@ Item {
 
         StyledText {
             font.pixelSize: Appearance.font.pixelSize.large
-            color: Appearance.colors.colOnLayer1
+            color: Appearance.colors.ralseiCream
             text: DateTime.time
         }
 
         StyledText {
             visible: root.showDate
             font.pixelSize: Appearance.font.pixelSize.small
-            color: Appearance.colors.colOnLayer1
+            color: Appearance.colors.ralseiTextMuted
             text: "•"
         }
 
         StyledText {
             visible: root.showDate
             font.pixelSize: Appearance.font.pixelSize.small
-            color: Appearance.colors.colOnLayer1
+            color: Appearance.colors.ralseiTextMuted
             text: DateTime.longDate
         }
     }

@@ -10,6 +10,7 @@ RippleButton {
 
     implicitHeight: Math.max(content.implicitHeight, 26, content.implicitHeight)
     implicitWidth: implicitHeight
+    buttonRadius: Appearance.rounding.full
     contentItem: content
 
 }

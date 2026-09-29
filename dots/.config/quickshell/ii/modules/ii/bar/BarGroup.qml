@@ -19,8 +19,11 @@ Item {
             leftMargin: root.vertical ? 4 : 0
             rightMargin: root.vertical ? 4 : 0
         }
-        color: Config.options?.bar.borderless ? "transparent" : Appearance.colors.colLayer1
+        color: Config.options?.bar.borderless ? "transparent" : Appearance.colors.ralseiSurface
         radius: Appearance.rounding.small
+        Behavior on color {
+            animation: Appearance.animation.elementMoveFast.colorAnimation.createObject(background)
+        }
     }
 
     GridLayout {

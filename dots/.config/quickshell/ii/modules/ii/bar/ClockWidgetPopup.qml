@@ -62,7 +62,7 @@ StyledPopup {
             StyledText {
                 horizontalAlignment: Text.AlignLeft
                 wrapMode: Text.Wrap
-                color: Appearance.colors.colOnSurfaceVariant
+                color: Appearance.colors.ralseiCream
                 text: root.todosSection
             }
         }

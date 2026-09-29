@@ -9,7 +9,7 @@ import qs.modules.common
 import qs.modules.common.widgets
 import qs.modules.common.functions
 
-Item { // Bar content region
+Item { // Bar content region - Ralsei OS Magical Status Ribbon
     id: root
 
     property var screen: root.QsWindow.window?.screen
@@ -22,7 +22,7 @@ Item { // Bar content region
         Layout.bottomMargin: Appearance.sizes.baseBarHeight / 3
         Layout.fillHeight: true
         implicitWidth: 1
-        color: Appearance.colors.colOutlineVariant
+        color: Appearance.colors.ralseiOutline ?? Appearance.colors.colOutlineVariant
     }
 
     // Background shadow
@@ -34,17 +34,27 @@ Item { // Bar content region
             target: barBackground
         }
     }
-    // Background
+
+    // Background - Ralsei OS Magical Status Ribbon Surface
     Rectangle {
         id: barBackground
         anchors {
             fill: parent
-            margins: Config.options.bar.cornerStyle === 1 ? (Appearance.sizes.hyprlandGapsOut) : 0 // idk why but +1 is needed
+            margins: Config.options.bar.cornerStyle === 1 ? (Appearance.sizes.hyprlandGapsOut) : 0
         }
-        color: Config.options.bar.showBackground ? Appearance.colors.colLayer0 : "transparent"
+        color: Config.options.bar.showBackground ? (Appearance.colors.ralseiBackground ?? Appearance.colors.colLayer0) : "transparent"
         radius: Config.options.bar.cornerStyle === 1 ? Appearance.rounding.windowRounding : 0
         border.width: Config.options.bar.cornerStyle === 1 ? 1 : 0
-        border.color: Appearance.colors.colMagicContainer
+        border.color: (barLeftSideMouseArea.hovered || barRightSideMouseArea.hovered) ?
+            (Appearance.colors.ralseiMagicContainer ?? Appearance.colors.colLayer0Border) :
+            (Appearance.colors.ralseiOutline ?? Appearance.colors.colLayer0Border)
+
+        Behavior on border.color {
+            animation: Appearance.animation.elementMoveFast.colorAnimation.createObject(barBackground)
+        }
+        Behavior on color {
+            animation: Appearance.animation.elementMoveFast.colorAnimation.createObject(barBackground)
+        }
     }
 
     FocusedScrollMouseArea { // Left side | scroll to change brightness
@@ -86,7 +96,11 @@ Item { // Bar content region
                 id: leftSidebarButton
                 Layout.alignment: Qt.AlignVCenter
                 Layout.leftMargin: Appearance.rounding.screenRounding
-                colBackground: barLeftSideMouseArea.hovered ? Appearance.colors.colLayer1Hover : ColorUtils.transparentize(Appearance.colors.colLayer1Hover, 1)
+                colBackground: GlobalStates.sidebarLeftOpen ? 
+                    (Appearance.colors.ralseiMagicContainer ?? Appearance.colors.colSecondaryContainer) : 
+                    barLeftSideMouseArea.hovered ? 
+                    (Appearance.colors.ralseiMagicHover ?? Appearance.colors.colLayer1Hover) : 
+                    ColorUtils.transparentize(Appearance.colors.colLayer1Hover, 1)
             }
 
             ActiveWindow {
@@ -224,7 +238,7 @@ Item { // Bar content region
             spacing: 5
             layoutDirection: Qt.RightToLeft
 
-            RippleButton { // Right sidebar button
+            RippleButton { // Right sidebar button (Ralsei OS Magic Status Pill)
                 id: rightSidebarButton
 
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
@@ -235,14 +249,18 @@ Item { // Bar content region
                 implicitHeight: indicatorsRowLayout.implicitHeight + 5 * 2
 
                 buttonRadius: Appearance.rounding.full
-                colBackground: barRightSideMouseArea.hovered ? Appearance.colors.colLayer1Hover : ColorUtils.transparentize(Appearance.colors.colLayer1Hover, 1)
-                colBackgroundHover: Appearance.colors.colLayer1Hover
-                colRipple: Appearance.colors.colLayer1Active
-                colBackgroundToggled: Appearance.colors.colSecondaryContainer
-                colBackgroundToggledHover: Appearance.colors.colSecondaryContainerHover
-                colRippleToggled: Appearance.colors.colSecondaryContainerActive
+                colBackground: barRightSideMouseArea.hovered ? 
+                    (Appearance.colors.ralseiMagicContainer ?? Appearance.colors.colLayer1Hover) : 
+                    ColorUtils.transparentize(Appearance.colors.colLayer1Hover, 1)
+                colBackgroundHover: Appearance.colors.ralseiMagicContainer ?? Appearance.colors.colLayer1Hover
+                colRipple: Appearance.colors.ralseiMagicActive ?? Appearance.colors.colLayer1Active
+                colBackgroundToggled: Appearance.colors.ralseiMagicContainer ?? Appearance.colors.colSecondaryContainer
+                colBackgroundToggledHover: ColorUtils.mix(Appearance.colors.ralseiMagicContainer ?? Appearance.colors.colSecondaryContainer, Appearance.colors.ralseiMagic ?? Appearance.colors.colPrimary, 0.8)
+                colRippleToggled: Appearance.colors.ralseiMagicActive ?? Appearance.colors.colSecondaryContainerActive
                 toggled: GlobalStates.sidebarRightOpen
-                property color colText: toggled ? Appearance.m3colors.m3onSecondaryContainer : Appearance.colors.colOnLayer0
+                property color colText: toggled ? 
+                    (Appearance.colors.ralseiOnMagicContainer ?? Appearance.m3colors.m3onSecondaryContainer) : 
+                    (Appearance.colors.ralseiCream ?? Appearance.colors.colOnLayer0)
 
                 Behavior on colText {
                     animation: Appearance.animation.elementMoveFast.colorAnimation.createObject(this)

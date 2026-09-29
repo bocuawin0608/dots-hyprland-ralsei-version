@@ -18,7 +18,7 @@ Item {
         anchors.centerIn: parent
         value: percentage
         enableAnimation: false
-        colPrimary: root.warning ? Appearance.colors.colError : Appearance.colors.colOnSecondaryContainer
+        colPrimary: root.warning ? Appearance.colors.ralseiError : Appearance.colors.ralseiMagic
         accountForLightBleeding: !root.warning
 
         MaterialSymbol {
@@ -26,7 +26,7 @@ Item {
             fill: 1
             text: root.iconName
             iconSize: 13
-            color: Appearance.colors.colOnSecondaryContainer
+            color: root.warning ? Appearance.colors.ralseiError : Appearance.colors.ralseiCream
         }
     }
 

@@ -45,14 +45,14 @@ RippleButton {
     implicitHeight: rowLayout.implicitHeight + root.buttonVerticalPadding * 2
     implicitWidth: rowLayout.implicitWidth + root.buttonHorizontalPadding * 2
     buttonRadius: Appearance.rounding.normal
-    colBackground: (root.down || root.keyboardDown) ? Appearance.colors.colPrimaryContainerActive : 
-        (selected ? Appearance.colors.colPrimaryContainer : 
-        ColorUtils.transparentize(Appearance.colors.colPrimaryContainer, 1))
-    colBackgroundHover: Appearance.colors.colPrimaryContainer
-    colRipple: Appearance.colors.colPrimaryContainerActive
-    property color colForeground: selected ? Appearance.colors.colOnPrimaryContainer : Appearance.m3colors.m3onSurface
+    colBackground: (root.down || root.keyboardDown) ? Appearance.colors.ralseiMagicActive : 
+        (selected ? Appearance.colors.ralseiMagicContainer : 
+        ColorUtils.transparentize(Appearance.colors.ralseiMagicContainer, 1))
+    colBackgroundHover: Appearance.colors.ralseiMagicContainer
+    colRipple: Appearance.colors.ralseiMagicActive
+    property color colForeground: selected ? Appearance.colors.ralseiOnMagicContainer : Appearance.colors.ralseiCream
 
-    readonly property string highlightPrefix: `<u><font color="${Appearance.colors.colPrimary}">`
+    readonly property string highlightPrefix: `<u><font color="${Appearance.colors.ralseiMagic}">`
     readonly property string highlightSuffix: `</font></u>`
     // Note that this highlighting is independent from the search
     // It's close, but does not accurately represent how the fuzzy algorithm works
@@ -187,7 +187,7 @@ RippleButton {
             spacing: 0
             StyledText {
                 font.pixelSize: Appearance.font.pixelSize.smaller
-                color: root.selected ? Appearance.colors.colOnPrimaryContainer : Appearance.colors.colSubtext
+                color: root.selected ? Appearance.colors.ralseiOnMagicContainer : Appearance.colors.ralseiTextMuted
                 visible: root.itemType && root.itemType != Translation.tr("App")
                 text: root.itemType
             }
@@ -199,13 +199,13 @@ RippleButton {
                         implicitWidth: activeText.implicitHeight
                         implicitHeight: activeText.implicitHeight
                         radius: Appearance.rounding.full
-                        color: Appearance.colors.colPrimary
+                        color: Appearance.colors.ralseiMagic
                         MaterialSymbol {
                             id: activeText
                             anchors.centerIn: parent
                             text: "check"
                             font.pixelSize: Appearance.font.pixelSize.normal
-                            color: Appearance.m3colors.m3onPrimary
+                            color: Appearance.colors.ralseiOnMagicContainer
                         }
                     }
                 }
@@ -247,7 +247,7 @@ RippleButton {
             visible: root.selected
             id: clickAction
             font.pixelSize: Appearance.font.pixelSize.normal
-            color: Appearance.colors.colOnPrimaryContainer
+            color: Appearance.colors.ralseiOnMagicContainer
             horizontalAlignment: Text.AlignRight
             text: root.itemClickActionName
         }
@@ -267,8 +267,8 @@ RippleButton {
                     implicitHeight: 34
                     implicitWidth: 34
 
-                    colBackgroundHover: Appearance.colors.colSecondaryContainerHover
-                    colRipple: Appearance.colors.colSecondaryContainerActive
+                    colBackgroundHover: Appearance.colors.ralseiMagicHover
+                    colRipple: Appearance.colors.ralseiMagicActive
 
                     contentItem: Item {
                         id: actionContentItem

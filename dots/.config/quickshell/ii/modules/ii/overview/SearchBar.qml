@@ -127,7 +127,7 @@ RowLayout {
             text: Translation.tr("Recognize music")
         }
 
-        colText: toggled ? Appearance.colors.colOnPrimary : Appearance.colors.colOnSurfaceVariant
+        colText: toggled ? Appearance.colors.ralseiOnMagicContainer : Appearance.colors.ralseiCream
         background: MaterialShape {
             RotationAnimation on rotation {
                 running: songRecButton.toggled
@@ -146,9 +146,9 @@ RowLayout {
             }
             color: {
                 if (songRecButton.toggled) {
-                    return songRecButton.hovered ? Appearance.colors.colPrimaryHover : Appearance.colors.colPrimary
+                    return songRecButton.hovered ? Appearance.colors.ralseiMagicHover : Appearance.colors.ralseiMagic
                 } else {
-                    return songRecButton.hovered ? Appearance.colors.colSurfaceContainerHigh : ColorUtils.transparentize(Appearance.colors.colSurfaceContainerHigh)
+                    return songRecButton.hovered ? Appearance.colors.ralseiSurfaceElevated : ColorUtils.transparentize(Appearance.colors.ralseiSurfaceElevated)
                 }
             }
             Behavior on color {

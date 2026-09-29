@@ -12,18 +12,18 @@ RowLayout {
 
     MaterialSymbol {
         text: root.icon
-        color: Appearance.colors.colOnSurfaceVariant
+        color: Appearance.colors.ralseiTextMuted
         iconSize: Appearance.font.pixelSize.large
     }
     StyledText {
         text: root.label
-        color: Appearance.colors.colOnSurfaceVariant
+        color: Appearance.colors.ralseiTextMuted
     }
     StyledText {
         Layout.fillWidth: true
         horizontalAlignment: Text.AlignRight
         visible: root.value !== ""
-        color: Appearance.colors.colOnSurfaceVariant
+        color: Appearance.colors.ralseiCream
         text: root.value
     }
 }

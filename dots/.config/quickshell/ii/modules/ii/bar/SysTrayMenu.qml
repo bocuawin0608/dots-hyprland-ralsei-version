@@ -72,10 +72,10 @@ PopupWindow {
                 margins: root.padding
             }
 
-            color: Appearance.colors.colLayer0
+            color: Appearance.colors.ralseiSurfaceElevated
             radius: Appearance.rounding.windowRounding
             border.width: 1
-            border.color: Appearance.colors.colLayer0Border
+            border.color: Appearance.colors.ralseiOutlineVariant
             clip: true
 
             opacity: 0
@@ -214,7 +214,7 @@ PopupWindow {
         Rectangle {
             Layout.fillWidth: true
             implicitHeight: 1
-            color: Appearance.colors.colSubtext
+            color: Appearance.colors.ralseiOutlineVariant
             Layout.topMargin: 4
             Layout.bottomMargin: 4
         }

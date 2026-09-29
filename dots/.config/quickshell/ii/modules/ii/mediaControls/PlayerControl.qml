@@ -19,7 +19,7 @@ Item { // Player instance
     property string artDownloadLocation: Directories.coverArt
     property string artFileName: Qt.md5(artUrl)
     property string artFilePath: `${artDownloadLocation}/${artFileName}`
-    property color artDominantColor: ColorUtils.mix((colorQuantizer?.colors[0] ?? Appearance.colors.colPrimary), Appearance.colors.colPrimaryContainer, 0.8) || Appearance.m3colors.m3secondaryContainer
+    property color artDominantColor: ColorUtils.mix((colorQuantizer?.colors[0] ?? Appearance.colors.ralseiPrimary), Appearance.colors.ralseiMagicContainer, 0.8) || Appearance.colors.ralseiMagicContainer
     property bool downloaded: false
     property list<real> visualizerPoints: []
     property real maxVisualizerValue: 1000 // Max value in the data points
@@ -61,7 +61,7 @@ Item { // Player instance
 
     onArtFilePathChanged: {
         if (root.artUrl.length == 0) {
-            root.artDominantColor = Appearance.m3colors.m3secondaryContainer
+            root.artDominantColor = Appearance.colors.ralseiMagicContainer
             return;
         }
 
@@ -141,7 +141,7 @@ Item { // Player instance
             points: root.visualizerPoints
             maxVisualizerValue: root.maxVisualizerValue
             smoothing: root.visualizerSmoothing
-            color: blendedColors.colMagic
+            color: blendedColors.colPrimary
         }
 
         RowLayout {

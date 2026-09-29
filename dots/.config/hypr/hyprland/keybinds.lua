@@ -31,6 +31,7 @@ hl.bind("SUPER + N", hl.dsp.global("quickshell:sidebarRightToggle"), { descripti
 hl.bind("SUPER + Slash", hl.dsp.global("quickshell:cheatsheetToggle"), { description = "Shell: Toggle cheatsheet" })
 hl.bind("SUPER + K", hl.dsp.global("quickshell:oskToggle"), { description = "Shell: Toggle on-screen keyboard" })
 hl.bind("SUPER + M", hl.dsp.global("quickshell:mediaControlsToggle"), { description = "Shell: Toggle media controls" })
+hl.bind("SUPER + SHIFT + Y", hl.dsp.global("quickshell:lyricsToggle"), { description = "Shell: Toggle Kinetic Lyrics" })
 hl.bind("SUPER + G", hl.dsp.global("quickshell:overlayToggle"), { description = "Shell: Toggle widget overlay" })
 hl.bind("CTRL + ALT + Delete", hl.dsp.global("quickshell:sessionToggle"), { description = "Shell: Toggle session menu" })
 hl.bind("SUPER + J", hl.dsp.global("quickshell:barToggle"), { description = "Shell: Toggle bar" })
@@ -357,4 +358,3 @@ hl.bind("CTRL + SHIFT + Escape", hl.dsp.exec_cmd(taskManager), { description = "
 --# Cursed stuff
 --## Make window not amogus large
 hl.bind("CTRL + SUPER + Backslash", hl.dsp.window.resize({ x = 640, y = 480, "exact" }))
-hl.bind("CTRL + SHIFT + Y", hl.dsp.exec_cmd("quickshell -c 'qs.services.Ipc.send(\"subtitle\", \"toggle\")'"), { description = "Toggle Ralsei Subtitle Mode" })

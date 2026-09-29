@@ -21,7 +21,7 @@ Item { // Bar content region
         Layout.rightMargin: Appearance.sizes.baseBarHeight / 3
         Layout.fillWidth: true
         implicitHeight: 1
-        color: Appearance.colors.colOutlineVariant
+        color: Appearance.colors.ralseiOutlineVariant
     }
 
     // Background shadow
@@ -40,10 +40,10 @@ Item { // Bar content region
             fill: parent
             margins: Config.options.bar.cornerStyle === 1 ? (Appearance.sizes.hyprlandGapsOut) : 0 // idk why but +1 is needed
         }
-        color: Config.options.bar.showBackground ? Appearance.colors.colLayer0 : "transparent"
+        color: Config.options.bar.showBackground ? Appearance.colors.ralseiBackground : "transparent"
         radius: Config.options.bar.cornerStyle === 1 ? Appearance.rounding.windowRounding : 0
         border.width: Config.options.bar.cornerStyle === 1 ? 1 : 0
-        border.color: Appearance.colors.colLayer0Border
+        border.color: Appearance.colors.ralseiOutlineVariant
     }
 
     FocusedScrollMouseArea { // Top section | scroll to change brightness
@@ -201,14 +201,14 @@ Item { // Bar content region
                 implicitWidth: indicatorsColumnLayout.implicitWidth + 6 * 2
 
                 buttonRadius: Appearance.rounding.full
-                colBackground: barBottomSectionMouseArea.hovered ? Appearance.colors.colLayer1Hover : ColorUtils.transparentize(Appearance.colors.colLayer1Hover, 1)
-                colBackgroundHover: Appearance.colors.colLayer1Hover
-                colRipple: Appearance.colors.colLayer1Active
-                colBackgroundToggled: Appearance.colors.colSecondaryContainer
-                colBackgroundToggledHover: Appearance.colors.colSecondaryContainerHover
-                colRippleToggled: Appearance.colors.colSecondaryContainerActive
+                colBackground: barBottomSectionMouseArea.hovered ? Appearance.colors.ralseiMagicHover : ColorUtils.transparentize(Appearance.colors.ralseiMagicHover, 1)
+                colBackgroundHover: Appearance.colors.ralseiMagicHover
+                colRipple: Appearance.colors.ralseiMagicActive
+                colBackgroundToggled: Appearance.colors.ralseiMagicContainer
+                colBackgroundToggledHover: Appearance.colors.ralseiMagicHover
+                colRippleToggled: Appearance.colors.ralseiMagicActive
                 toggled: GlobalStates.sidebarRightOpen
-                property color colText: toggled ? Appearance.m3colors.m3onSecondaryContainer : Appearance.colors.colOnLayer0
+                property color colText: toggled ? Appearance.colors.ralseiOnMagicContainer : Appearance.colors.ralseiCream
 
                 Behavior on colText {
                     animation: Appearance.animation.elementMoveFast.colorAnimation.createObject(this)

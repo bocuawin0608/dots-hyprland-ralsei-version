@@ -85,16 +85,16 @@ Item {
             background.implicitWidth: 24
             background.implicitHeight: 24
             background.anchors.centerIn: this
-            colBackgroundToggled: Appearance.colors.colSecondaryContainer
-            colBackgroundToggledHover: Appearance.colors.colSecondaryContainerHover
-            colRippleToggled: Appearance.colors.colSecondaryContainerActive
+            colBackgroundToggled: Appearance.colors.ralseiMagicContainer
+            colBackgroundToggledHover: Appearance.colors.ralseiMagicHover
+            colRippleToggled: Appearance.colors.ralseiMagicActive
 
             contentItem: MaterialSymbol {
                 anchors.centerIn: parent
                 iconSize: Appearance.font.pixelSize.larger
                 text: "expand_more"
                 horizontalAlignment: Text.AlignHCenter
-                color: root.trayOverflowOpen ? Appearance.colors.colOnSecondaryContainer : Appearance.colors.colOnLayer2
+                color: root.trayOverflowOpen ? Appearance.colors.ralseiOnMagicContainer : Appearance.colors.ralseiCream
                 rotation: (root.trayOverflowOpen ? 180 : 0) - (90 * root.vertical) + (180 * root.invertSide)
                 Behavior on rotation {
                     animation: Appearance.animation.elementMoveFast.numberAnimation.createObject(this)
@@ -149,7 +149,7 @@ Item {
         StyledText {
             Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
             font.pixelSize: Appearance.font.pixelSize.larger
-            color: Appearance.colors.colSubtext
+            color: Appearance.colors.ralseiTextMuted
             text: "•"
             visible: root.showSeparator && SystemTray.items.values.length > 0
         }

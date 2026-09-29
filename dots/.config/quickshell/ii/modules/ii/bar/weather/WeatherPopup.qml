@@ -31,7 +31,7 @@ StyledPopup {
                     font.weight: Font.Medium
                     text: "location_on"
                     iconSize: Appearance.font.pixelSize.large
-                    color: Appearance.colors.colOnSurfaceVariant
+                    color: Appearance.colors.ralseiMagic
                 }
 
                 StyledText {
@@ -40,13 +40,13 @@ StyledPopup {
                         weight: Font.Medium
                         pixelSize: Appearance.font.pixelSize.normal
                     }
-                    color: Appearance.colors.colOnSurfaceVariant
+                    color: Appearance.colors.ralseiCream
                 }
             }
             StyledText {
                 id: temp
                 font.pixelSize: Appearance.font.pixelSize.smaller
-                color: Appearance.colors.colOnSurfaceVariant
+                color: Appearance.colors.ralseiTextMuted
                 text: Weather.data.temp + " • " + Translation.tr("Feels like %1").arg(Weather.data.tempFeelsLike)
             }
         }
@@ -109,7 +109,7 @@ StyledPopup {
                 weight: Font.Medium
                 pixelSize: Appearance.font.pixelSize.smaller
             }
-            color: Appearance.colors.colOnSurfaceVariant
+            color: Appearance.colors.ralseiTextMuted
         }
     }
 }

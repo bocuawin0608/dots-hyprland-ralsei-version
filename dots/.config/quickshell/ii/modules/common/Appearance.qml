@@ -111,9 +111,7 @@ Singleton {
     colors: QtObject {
         property color colSubtext: m3colors.m3outline
         // Layer 0
-        property color colLayer0Base: root.m3colors.darkmode ? 
-            ColorUtils.mix(m3colors.m3background, "#0c1512", 0.15) : // Slight Dark World tint for Ralsei OS
-            ColorUtils.mix(m3colors.m3background, m3colors.m3primary, Config.options.appearance.extraBackgroundTint ? 0.99 : 1)
+        property color colLayer0Base: ColorUtils.mix(m3colors.m3background, m3colors.m3primary, Config.options.appearance.extraBackgroundTint ? 0.99 : 1)
         property color colLayer0: ColorUtils.transparentize(colLayer0Base, root.backgroundTransparency)
         property color colOnLayer0: m3colors.m3onBackground
         property color colLayer0Hover: ColorUtils.transparentize(ColorUtils.mix(colLayer0, colOnLayer0, 0.9, root.contentTransparency))
@@ -183,13 +181,6 @@ Singleton {
         property color colSurfaceContainerHighestActive: ColorUtils.mix(m3colors.m3surfaceContainerHighest, m3colors.m3onSurface, 0.85)
         property color colOnSurface: m3colors.m3onSurface
         property color colOnSurfaceVariant: m3colors.m3onSurfaceVariant
-        // Magic (Ralsei OS)
-        property color colMagic: ColorUtils.mix(m3colors.m3primary, "#5fe28d", 0.6) // Blend primary with a soft Ralsei green
-        property color colMagicHover: ColorUtils.mix(colMagic, colOnMagic, 0.2)
-        property color colMagicActive: ColorUtils.mix(colMagic, colOnMagic, 0.4)
-        property color colOnMagic: m3colors.m3onPrimary
-        property color colMagicContainer: ColorUtils.mix(m3colors.m3primaryContainer, "#1a3b2a", 0.5) // Dark magical surface
-        property color colOnMagicContainer: ColorUtils.mix(m3colors.m3onPrimaryContainer, "#5fe28d", 0.3)
         // Misc
         property color colTooltip: m3colors.m3inverseSurface
         property color colOnTooltip: m3colors.m3inverseOnSurface
@@ -205,6 +196,26 @@ Singleton {
         property color colErrorContainerHover: ColorUtils.mix(m3colors.m3errorContainer, m3colors.m3onErrorContainer, 0.90)
         property color colErrorContainerActive: ColorUtils.mix(m3colors.m3errorContainer, m3colors.m3onErrorContainer, 0.70)
         property color colOnErrorContainer: m3colors.m3onErrorContainer
+        // Ralsei OS Semantic Theme Tokens
+        property color ralseiBackground: colLayer0
+        property color ralseiSurface: colLayer1
+        property color ralseiSurfaceElevated: colLayer2
+        property color ralseiPrimary: m3colors.m3primary
+        property color ralseiSecondary: m3colors.m3secondary
+        property color ralseiAccent: m3colors.m3primary
+        property color ralseiMagic: m3colors.m3primary
+        property color ralseiMagicContainer: m3colors.m3primaryContainer
+        property color ralseiMagicHover: colPrimaryHover
+        property color ralseiMagicActive: colPrimaryActive
+        property color ralseiOnMagicContainer: m3colors.m3onPrimaryContainer
+        property color ralseiCream: m3colors.m3onBackground
+        property color ralseiOutline: colOutline
+        property color ralseiOutlineVariant: colOutlineVariant
+        property color ralseiText: m3colors.m3onSurface
+        property color ralseiTextMuted: colSubtext
+        property color ralseiSuccess: m3colors.m3success
+        property color ralseiWarning: m3colors.term3
+        property color ralseiError: colError
     }
 
     rounding: QtObject {

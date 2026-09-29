@@ -70,12 +70,19 @@ LazyLoader {
             }
             implicitWidth: root.contentItem.implicitWidth + margin * 2
             implicitHeight: root.contentItem.implicitHeight + margin * 2
-            color: Appearance.m3colors.m3surfaceContainer
+            color: Appearance.colors.ralseiSurfaceElevated
             radius: Appearance.rounding.small
             children: [root.contentItem]
 
             border.width: 1
-            border.color: Appearance.colors.colLayer0Border
+            border.color: Appearance.colors.ralseiOutlineVariant
+
+            Behavior on color {
+                animation: Appearance.animation.elementMoveFast.colorAnimation.createObject(popupBackground)
+            }
+            Behavior on border.color {
+                animation: Appearance.animation.elementMoveFast.colorAnimation.createObject(popupBackground)
+            }
         }
     }
 }

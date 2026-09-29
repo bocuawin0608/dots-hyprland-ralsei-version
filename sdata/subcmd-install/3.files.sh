@@ -193,7 +193,6 @@ function install_google_sans_flex(){
 
 #####################################################################################
 # In case some dirs does not exists
-v mkdir -p ~/Pictures/Wallpapers/Ralsei
 for i in "$XDG_BIN_HOME" "$XDG_CACHE_HOME" "$XDG_CONFIG_HOME" "$XDG_DATA_HOME"; do
   if ! test -e "$i"; then
     v mkdir -p "$i"

@@ -48,7 +48,7 @@ MouseArea {
 
         lineWidth: Appearance.rounding.unsharpen
         value: activePlayer?.position / activePlayer?.length
-        colPrimary: Appearance.colors.colOnSecondaryContainer
+        colPrimary: (activePlayer?.isPlaying) ? Appearance.colors.ralseiMagic : Appearance.colors.ralseiCream
         enableAnimation: false
 
         Item {
@@ -61,7 +61,7 @@ MouseArea {
                 fill: 1
                 text: activePlayer?.isPlaying ? "pause" : "music_note"
                 iconSize: Appearance.font.pixelSize.normal
-                color: Appearance.m3colors.m3onSecondaryContainer
+                color: (activePlayer?.isPlaying) ? Appearance.colors.ralseiMagic : Appearance.colors.ralseiCream
             }
         }
     }
@@ -80,7 +80,7 @@ MouseArea {
             }
 
             StyledText {
-                color: Appearance.colors.colOnSurfaceVariant
+                color: Appearance.colors.ralseiCream
                 text: `${cleanedTitle}${activePlayer?.trackArtist ? '\n' + activePlayer.trackArtist : ''}`
             }
         }

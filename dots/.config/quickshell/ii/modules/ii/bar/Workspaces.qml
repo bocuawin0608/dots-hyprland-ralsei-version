@@ -96,7 +96,7 @@ ButtonMouseArea {
             id: occupiedIndicatorsBg
             anchors.fill: parent
             contentLayer: StyledRectangle.ContentLayer.Group
-            color: ColorUtils.transparentize(Appearance.m3colors.m3secondaryContainer, 0.4)
+            color: ColorUtils.transparentize(Appearance.colors.ralseiMagicContainer, 0.4)
             visible: false
         }
 
@@ -178,7 +178,7 @@ ButtonMouseArea {
                 hover: root.containsMouse
                 press: root.containsPress
                 drag: true // There are too many layers so we need to force this to be a lil more opaque
-                contentColor: Appearance.colors.colMagic
+                contentColor: Appearance.colors.ralseiMagic
             }
         }
 
@@ -196,8 +196,8 @@ ButtonMouseArea {
         Colorizer {
             z: 5
             anchors.fill: numbersGrid
-            colorizationColor: Appearance.colors.colOnMagic
-            sourceColor: Appearance.colors.colOnSecondaryContainer
+            colorizationColor: Appearance.colors.ralseiOnMagicContainer
+            sourceColor: Appearance.colors.ralseiCream
 
             source: activeIndicator
             maskEnabled: true
@@ -256,7 +256,7 @@ ButtonMouseArea {
                         sourceComponent: Colorizer {
                             implicitWidth: appIcon.implicitWidth
                             implicitHeight: appIcon.implicitHeight
-                            colorizationColor: Appearance.m3colors.darkmode ? Appearance.colors.colOnSecondaryContainer : Appearance.colors.colOnMagic
+                            colorizationColor: Appearance.m3colors.darkmode ? Appearance.colors.colOnSecondaryContainer : Appearance.colors.colOnPrimary
                             colorization: Config.options.bar.workspaces.monochromeIcons ? 0.8 : 0.5
                             brightness: 0
                             source: appIcon
@@ -300,7 +300,7 @@ ButtonMouseArea {
                     return base;
                 return specialWsText.implicitWidth + undirectionalWidth;
             }
-            color: Appearance.colors.colMagic
+            color: Appearance.colors.ralseiMagic
 
             implicitWidth: root.vertical ? undirectionalWidth : undirectionalLength
             implicitHeight: root.vertical ? undirectionalLength : undirectionalWidth
@@ -309,7 +309,7 @@ ButtonMouseArea {
                 id: specialWsText
                 anchors.centerIn: parent
                 text: (!root.vertical ? wsModel.specialWorkspaceName : "S")
-                color: Appearance.colors.colOnMagic
+                color: Appearance.colors.ralseiOnMagicContainer
                 font.pixelSize: root.specialTextSize
             }
 
@@ -369,7 +369,7 @@ ButtonMouseArea {
         id: wsNum
         property bool hasBiggestWindow: !!wsModel.biggestWindow[index]
         property int wsId: wsModel.getWorkspaceIdAt(index)
-        property color contentColor: (wsModel.occupied[wsNum.index] && wsId !== wsModel.fakeWorkspace) ? Appearance.colors.colOnSecondaryContainer : Appearance.colors.colOnLayer1Inactive
+        property color contentColor: (wsModel.occupied[wsNum.index] && wsId !== wsModel.fakeWorkspace) ? Appearance.colors.ralseiCream : Appearance.colors.ralseiTextMuted
         property bool showingNumbers: {
             if (root.superPressAndHeld)
                 return true;
@@ -430,7 +430,7 @@ ButtonMouseArea {
 
             contentLayer: StyledRectangle.ContentLayer.Group
             radius: indicatorThickness / 2
-            color: Appearance.colors.colMagic
+            color: Appearance.colors.ralseiMagic
 
             x: root.vertical ? null : indicatorPosition
             y: root.vertical ? indicatorPosition : null

@@ -15,7 +15,7 @@ Row {
         font.weight: Font.DemiBold
         text: root.icon
         iconSize: Appearance.font.pixelSize.large
-        color: Appearance.colors.colOnSurfaceVariant
+        color: Appearance.colors.ralseiMagic
     }
 
     StyledText {
@@ -25,6 +25,6 @@ Row {
             weight: Font.DemiBold
             pixelSize: Appearance.font.pixelSize.normal
         }
-        color: Appearance.colors.colOnSurfaceVariant
+        color: Appearance.colors.ralseiCream
     }
 }

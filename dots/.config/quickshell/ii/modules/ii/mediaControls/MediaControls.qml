@@ -162,7 +162,7 @@ Scope {
                     Rectangle {
                         id: placeholderBackground
                         anchors.centerIn: parent
-                        color: Appearance.colors.colLayer0
+                        color: Appearance.colors.ralseiSurfaceElevated
                         radius: root.popupRounding
                         property real padding: 20
                         implicitWidth: placeholderLayout.implicitWidth + padding * 2
@@ -175,9 +175,10 @@ Scope {
                             StyledText {
                                 text: Translation.tr("No active player")
                                 font.pixelSize: Appearance.font.pixelSize.large
+                                color: Appearance.colors.ralseiCream
                             }
                             StyledText {
-                                color: Appearance.colors.colSubtext
+                                color: Appearance.colors.ralseiTextMuted
                                 text: Translation.tr("Make sure your player has MPRIS support\nor try turning off duplicate player filtering")
                                 font.pixelSize: Appearance.font.pixelSize.small
                             }

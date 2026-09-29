@@ -127,9 +127,9 @@ Item { // Notification item area
 
         color: (expanded && !onlyNotification) ? 
             (notificationObject.urgency == NotificationUrgency.Critical) ? 
-                ColorUtils.mix(Appearance.colors.colSecondaryContainer, Appearance.colors.colLayer2, 0.35) :
-                (Appearance.colors.colLayer3) :
-            ColorUtils.transparentize(Appearance.colors.colLayer3)
+                ColorUtils.mix(Appearance.colors.ralseiError, Appearance.colors.ralseiSurfaceElevated, 0.35) :
+                (Appearance.colors.ralseiSurfaceElevated) :
+            ColorUtils.transparentize(Appearance.colors.ralseiSurfaceElevated)
 
         implicitHeight: expanded ? (contentColumn.implicitHeight + padding * 2) : summaryRow.implicitHeight
         Behavior on implicitHeight {
@@ -156,7 +156,7 @@ Item { // Notification item area
                     Layout.fillWidth: summaryTextMetrics.width >= root.width * root.summaryElideRatio
                     visible: !root.onlyNotification
                     font.pixelSize: root.fontSize
-                    color: Appearance.colors.colOnLayer3
+                    color: Appearance.colors.ralseiCream
                     elide: Text.ElideRight
                     text: root.notificationObject.summary || ""
                 }
@@ -168,7 +168,7 @@ Item { // Notification item area
                         animation: Appearance.animation.elementMoveFast.numberAnimation.createObject(this)
                     }
                     font.pixelSize: root.fontSize
-                    color: Appearance.colors.colSubtext
+                    color: Appearance.colors.ralseiTextMuted
                     elide: Text.ElideRight
                     wrapMode: Text.Wrap // Needed for proper eliding????
                     maximumLineCount: 1
@@ -192,7 +192,7 @@ Item { // Notification item area
                     }
                     Layout.fillWidth: true
                     font.pixelSize: root.fontSize
-                    color: Appearance.colors.colSubtext
+                    color: Appearance.colors.ralseiCream
                     wrapMode: Text.Wrap
                     elide: Text.ElideRight
                     textFormat: Text.RichText
@@ -263,7 +263,7 @@ Item { // Notification item area
                                     iconSize: Appearance.font.pixelSize.larger
                                     horizontalAlignment: Text.AlignHCenter
                                     color: (notificationObject.urgency == NotificationUrgency.Critical) ? 
-                                        Appearance.m3colors.m3onSurfaceVariant : Appearance.m3colors.m3onSurface
+                                        Appearance.colors.ralseiError : Appearance.colors.ralseiCream
                                     text: "close"
                                 }
                             }
@@ -309,7 +309,7 @@ Item { // Notification item area
                                     iconSize: Appearance.font.pixelSize.larger
                                     horizontalAlignment: Text.AlignHCenter
                                     color: (notificationObject.urgency == NotificationUrgency.Critical) ? 
-                                        Appearance.m3colors.m3onSurfaceVariant : Appearance.m3colors.m3onSurface
+                                        Appearance.colors.ralseiError : Appearance.colors.ralseiCream
                                     text: "content_copy"
                                 }
                             }

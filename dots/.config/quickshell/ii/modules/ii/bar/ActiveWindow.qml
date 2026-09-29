@@ -29,7 +29,7 @@ Item {
         StyledText {
             Layout.fillWidth: true
             font.pixelSize: Appearance.font.pixelSize.smaller
-            color: Appearance.colors.colSubtext
+            color: Appearance.colors.ralseiTextMuted
             elide: Text.ElideRight
             text: root.focusingThisMonitor && root.activeWindow?.activated && root.biggestWindow ? 
                 root.activeWindow?.appId :
@@ -40,7 +40,7 @@ Item {
         StyledText {
             Layout.fillWidth: true
             font.pixelSize: Appearance.font.pixelSize.small
-            color: Appearance.colors.colOnLayer0
+            color: Appearance.colors.ralseiCream
             elide: Text.ElideRight
             text: root.focusingThisMonitor && root.activeWindow?.activated && root.biggestWindow ? 
                 root.activeWindow?.title :

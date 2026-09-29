@@ -111,7 +111,7 @@ Item { // Wrapper
         implicitWidth: columnLayout.implicitWidth
         implicitHeight: columnLayout.implicitHeight
         radius: searchBar.height / 2 + searchBar.verticalPadding
-        color: Appearance.colors.colBackgroundSurfaceContainer
+        color: Appearance.colors.ralseiBackground
 
         Behavior on implicitHeight {
             id: searchHeightBehavior
@@ -155,7 +155,7 @@ Item { // Wrapper
                 visible: root.showResults
                 Layout.fillWidth: true
                 height: 1
-                color: Appearance.colors.colOutlineVariant
+                color: Appearance.colors.ralseiOutlineVariant
             }
 
             ListView { // App results

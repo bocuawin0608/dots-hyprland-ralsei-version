@@ -7,7 +7,7 @@ import qs.modules.common.widgets
 Rectangle {
     id: root
     radius: Appearance.rounding.small
-    color: Appearance.colors.colSurfaceContainerHigh
+    color: Appearance.colors.ralseiSurfaceElevated
     implicitWidth: columnLayout.implicitWidth + 14 * 2
     implicitHeight: columnLayout.implicitHeight + 14 * 2
     Layout.fillWidth: parent
@@ -26,19 +26,19 @@ Rectangle {
                 id: symbol
                 fill: 0
                 iconSize: Appearance.font.pixelSize.normal
-                color: Appearance.colors.colOnSurfaceVariant
+                color: Appearance.colors.ralseiMagic
             }
             StyledText {
                 id: title
                 font.pixelSize: Appearance.font.pixelSize.smaller
-                color: Appearance.colors.colOnSurfaceVariant
+                color: Appearance.colors.ralseiTextMuted
             }
         }
         StyledText {
             id: value
             Layout.alignment: Qt.AlignHCenter
             font.pixelSize: Appearance.font.pixelSize.small
-            color: Appearance.colors.colOnSurfaceVariant
+            color: Appearance.colors.ralseiCream
         }
     }
 }

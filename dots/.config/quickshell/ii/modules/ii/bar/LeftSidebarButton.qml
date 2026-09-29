@@ -18,11 +18,11 @@ RippleButton {
     implicitWidth: distroIcon.width + buttonPadding * 2
     implicitHeight: distroIcon.height + buttonPadding * 2
     buttonRadius: Appearance.rounding.full
-    colBackgroundHover: Appearance.colors.colLayer1Hover
-    colRipple: Appearance.colors.colLayer1Active
-    colBackgroundToggled: Appearance.colors.colSecondaryContainer
-    colBackgroundToggledHover: Appearance.colors.colSecondaryContainerHover
-    colRippleToggled: Appearance.colors.colSecondaryContainerActive
+    colBackgroundHover: Appearance.colors.ralseiMagicHover
+    colRipple: Appearance.colors.ralseiMagicActive
+    colBackgroundToggled: Appearance.colors.ralseiMagicContainer
+    colBackgroundToggledHover: Appearance.colors.ralseiMagicHover
+    colRippleToggled: Appearance.colors.ralseiMagicActive
     toggled: GlobalStates.sidebarLeftOpen
 
     onPressed: {
@@ -59,7 +59,7 @@ RippleButton {
         height: 19.5
         source: Config.options.bar.topLeftIcon == 'distro' ? SystemInfo.distroIcon : `${Config.options.bar.topLeftIcon}-symbolic`
         colorize: true
-        color: Appearance.colors.colOnLayer0
+        color: root.toggled ? Appearance.colors.ralseiOnMagicContainer : Appearance.colors.ralseiCream
 
         Rectangle {
             opacity: root.showPing ? 1 : 0
@@ -73,7 +73,7 @@ RippleButton {
             implicitWidth: 8
             implicitHeight: 8
             radius: Appearance.rounding.full
-            color: Appearance.colors.colTertiary
+            color: Appearance.colors.ralseiMagic
 
             Behavior on opacity {
                 animation: Appearance.animation.elementMoveFast.numberAnimation.createObject(this)

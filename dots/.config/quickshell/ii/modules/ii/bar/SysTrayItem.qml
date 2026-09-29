@@ -91,7 +91,7 @@ MouseArea {
             ColorOverlay {
                 anchors.fill: desaturatedIcon
                 source: desaturatedIcon
-                color: ColorUtils.transparentize(Appearance.colors.colOnLayer0, 0.9)
+                color: ColorUtils.transparentize(Appearance.colors.ralseiCream, 0.9)
             }
         }
     }
